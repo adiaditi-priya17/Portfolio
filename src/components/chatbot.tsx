@@ -1,5 +1,6 @@
 
 import { useState, type FormEvent } from "react";
+import { getLocalPortfolioAnswer } from "../data/portfolioBot";
 import "./Chatbot.css";
 
 type Message = {
@@ -14,7 +15,7 @@ function Chatbot() {
     {
       role: "assistant",
       content:
-        "Hey! 👋 I'm your portfolio assistant. Ask me anything!"
+        "Hey! 👋 I'm your portfolio assistant. Ask me anything about Aditi's projects, skills, education, or experience!"
     }
   ]);
 
@@ -48,31 +49,39 @@ function Chatbot() {
         })
       });
 
-      const data: { reply?: string; error?: string } =
-        await response.json();
-
-      if (!response.ok || !data.reply) {
-        throw new Error(data.error || "Request failed");
+      if (response.ok) {
+        const data = await response.json().catch(() => null);
+        if (data && data.reply) {
+          setMessages([
+            ...updatedMessages,
+            {
+              role: "assistant",
+              content: data.reply
+            }
+          ]);
+          return;
+        }
       }
 
+      // Smart portfolio fallback if API returned non-OK status or empty reply
+      const fallbackReply = getLocalPortfolioAnswer(userMessage.content);
       setMessages([
         ...updatedMessages,
         {
           role: "assistant",
-          content: data.reply
+          content: fallbackReply
         }
       ]);
-
     } catch {
+      // Offline / dev server / network error fallback — always gives an accurate, smart response
+      const fallbackReply = getLocalPortfolioAnswer(userMessage.content);
       setMessages([
         ...updatedMessages,
         {
           role: "assistant",
-          content:
-            "Sorry! Something went wrong. Please try again."
+          content: fallbackReply
         }
       ]);
-
     } finally {
       setLoading(false);
     }
@@ -100,6 +109,7 @@ function Chatbot() {
               <div
                 key={index}
                 className={`message ${message.role}`}
+                style={{ whiteSpace: "pre-line" }}
               >
                 {message.content}
               </div>

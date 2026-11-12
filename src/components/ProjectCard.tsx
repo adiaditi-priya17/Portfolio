@@ -52,8 +52,22 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
                 </span>
               ))}
             </div>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <span className="flex min-h-11 items-center gap-2 rounded-md bg-bone px-5 text-sm font-bold text-ink transition group-hover:bg-white">▶ View Project</span>
+            <div className="mt-5 flex flex-wrap items-center gap-2.5">
+              <span className="flex min-h-10 items-center gap-2 rounded-md bg-bone px-4 text-xs font-bold text-ink transition group-hover:bg-white sm:text-sm sm:px-5 sm:min-h-11">
+                ▶ View Details
+              </span>
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="link"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex min-h-10 items-center gap-1.5 rounded-md bg-gradient-to-r from-violet-600 to-indigo-600 px-3.5 text-xs font-semibold text-white shadow-md shadow-violet-500/20 backdrop-blur transition hover:brightness-110 sm:text-sm sm:px-4 sm:min-h-11"
+                >
+                  Live Demo ↗
+                </a>
+              )}
               {project.github && (
                 <a
                   href={project.github}
@@ -61,7 +75,7 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
                   rel="noreferrer"
                   data-cursor="link"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex min-h-11 items-center gap-2 rounded-md border border-white/25 bg-black/30 px-4 text-sm font-semibold text-bone backdrop-blur transition hover:border-bone"
+                  className="flex min-h-10 items-center gap-1.5 rounded-md border border-white/25 bg-black/40 px-3.5 text-xs font-semibold text-bone backdrop-blur transition hover:border-bone hover:bg-black/60 sm:text-sm sm:px-4 sm:min-h-11"
                 >
                   GitHub ↗
                 </a>

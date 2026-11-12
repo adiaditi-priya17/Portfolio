@@ -91,21 +91,34 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
               {project.logline}
             </motion.p>
 
-            {project.github && (
-              <motion.div variants={block} className="mt-6 flex flex-wrap gap-3">
+            <motion.div variants={block} className="mt-6 flex flex-wrap gap-3">
+              {project.live && (
+                <Magnetic>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor="link"
+                    className="flex min-h-12 items-center gap-2 rounded-md bg-gradient-to-r from-violet-600 to-indigo-600 px-6 text-[15px] font-bold text-white shadow-lg shadow-violet-500/25 transition hover:brightness-110"
+                  >
+                    ▶ Live Demo ↗
+                  </a>
+                </Magnetic>
+              )}
+              {project.github && (
                 <Magnetic>
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
                     data-cursor="link"
-                    className="flex min-h-12 items-center gap-2 rounded-md bg-bone px-6 text-[15px] font-bold text-ink transition hover:bg-white"
+                    className="flex min-h-12 items-center gap-2 rounded-md border border-white/25 bg-ink-2 px-6 text-[15px] font-bold text-bone transition hover:border-bone hover:bg-white/10"
                   >
-                    GitHub ↗
+                    GitHub Repository ↗
                   </a>
                 </Magnetic>
-              </motion.div>
-            )}
+              )}
+            </motion.div>
 
             {/* impact */}
             <motion.section variants={block} className="mt-12">

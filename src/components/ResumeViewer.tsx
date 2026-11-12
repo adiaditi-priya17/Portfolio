@@ -150,8 +150,20 @@ export function ResumeSheet() {
           <H>Projects</H>
           {projects.map((p) => (
             <div key={p.id} className="mb-3">
-              <div className="flex flex-wrap justify-between gap-x-3">
-                <p className="text-sm font-semibold text-bone">{p.title}</p>
+              <div className="flex flex-wrap items-center justify-between gap-x-3">
+                <p className="text-sm font-semibold text-bone">
+                  {p.title}
+                  {p.live && (
+                    <a href={p.live} target="_blank" rel="noreferrer" className="ml-2 font-mono text-[11px] font-normal text-violet-400 hover:text-violet-300 hover:underline">
+                      [Live ↗]
+                    </a>
+                  )}
+                  {p.github && (
+                    <a href={p.github} target="_blank" rel="noreferrer" className="ml-2 font-mono text-[11px] font-normal text-cyan-400 hover:text-cyan-300 hover:underline">
+                      [Code ↗]
+                    </a>
+                  )}
+                </p>
                 <p className="text-xs text-smoke">{p.year}</p>
               </div>
               <p className="text-xs text-mist">{p.stack.join(', ')}</p>
@@ -171,23 +183,34 @@ export function ResumeSheet() {
           </div>
 
           <H>Achievements</H>
-          <ul className="space-y-2">
+          <ul className="space-y-2.5">
             {achievements.map((a) => (
               <li key={a.id} className="text-xs leading-relaxed text-mist">
                 <span className="font-semibold text-bone">
                   {a.title} — {a.org}.
                 </span>{' '}
                 {a.detail}
+                {a.link && (
+                  <a href={a.link} target="_blank" rel="noreferrer" className="ml-1.5 inline-block font-mono text-[11px] font-medium text-[#f5dfa8] hover:text-white hover:underline">
+                    [Certificate ↗]
+                  </a>
+                )}
               </li>
             ))}
           </ul>
 
           <H>Certifications</H>
-          <p className="text-xs leading-relaxed text-mist">
-            {Array.from(new Set(certifications.map((c) => c.issuer)))
-              .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
-              .join(' · ')}
-          </p>
+          <div className="space-y-2">
+            {certifications.map((c) => (
+              <p key={c.name} className="text-xs leading-relaxed text-mist">
+                <span className="font-semibold text-bone">{c.issuer}: </span>
+                {c.name}{' '}
+                <a href={c.link} target="_blank" rel="noreferrer" className="ml-1 inline-block font-mono text-[11px] text-cyan-400 hover:text-cyan-300 hover:underline">
+                  [View ↗]
+                </a>
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </article>

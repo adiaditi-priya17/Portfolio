@@ -75,6 +75,7 @@ export type Project = {
   metrics: Metric[];
   /** Omit when the repository isn't public — the GitHub button is hidden instead of linking to a 404. */
   github?: string;
+  live?: string;
   palette: Palette;
   motif: 'shield' | 'flow' | 'tenants';
 };
@@ -104,6 +105,7 @@ export const projects: Project[] = [
       { value: 'Solana', label: 'blockchain layer' },
       { value: '2', label: 'API layers (REST + Blockchain)' },
     ],
+    github: 'https://github.com/adiaditi-priya17/SAFER-AI.git',
     palette: { from: '#061730', via: '#0369a1', to: '#020b18', accent: '#38bdf8' },
     motif: 'flow',
   },
@@ -111,26 +113,53 @@ export const projects: Project[] = [
     id: 'hydronet',
     title: 'HydroNet',
     year: '2025',
-    genre: 'Physics Engine • Simulation • Python',
-    logline: 'A fluid-physics engine built from scratch in Java, scripted and analysed with Python.',
-    stack: ['Java', 'Python', 'Physics Engine'],
+    genre: 'Computational Modeling • Python',
+    logline: 'A Python-powered computational system for hydrological network analysis, fluid dynamics modeling, and data evaluation.',
+    stack: ['Python', 'NumPy', 'Data Analysis', 'Simulation Pipelines'],
     build: [
-      'Engineered a fully custom hydrodynamics simulation engine from first principles in Java — implementing Euler fluid equations, particle systems, and collision resolution without any third-party physics libraries.',
-      'Leveraged Python for simulation scripting, data pipeline automation, and real-time physics-state analysis, enabling rapid parameter sweeps and visual debugging of fluid behaviour.',
+      'Architected and implemented a computational hydrology framework in Python to simulate fluid flow dynamics, network routing, and system behaviors under variable conditions.',
+      'Constructed automated data pipelines and numerical evaluation models using NumPy for rapid parameter sweeps, data filtering, and fluid state analysis.',
     ],
     features: [
-      'Custom Euler fluid equations (no external physics lib)',
-      'Particle systems & collision resolution',
-      'Python scripting layer for parameter sweeps',
-      'Real-time fluid-state analysis & visual debugging',
-      'Modular engine architecture for extensibility',
+      'Hydrological network flow simulation & routing',
+      'Python data analysis and computational pipelines',
+      'High-throughput parameter evaluation with NumPy',
+      'Data-driven fluid state diagnostics & debugging',
     ],
     metrics: [
-      { value: 'From Scratch', label: 'zero external physics libs' },
-      { value: 'Java + Python', label: 'dual-language stack' },
-      { value: 'Real-time', label: 'fluid simulation' },
-      { value: 'Modular', label: 'engine architecture' },
+      { value: 'Python', label: 'core architecture' },
+      { value: 'Automated', label: 'numerical data pipelines' },
+      { value: 'High-Precision', label: 'state calculation' },
+      { value: 'Modular', label: 'simulation framework' },
     ],
+    github: 'https://github.com/adiaditi-priya17/HydroNet',
+    palette: { from: '#041624', via: '#0284c7', to: '#020d18', accent: '#38bdf8' },
+    motif: 'flow',
+  },
+  {
+    id: 'physics-engine',
+    title: 'Physics Engine from Scratch',
+    year: '2025',
+    genre: 'Game Physics • Algorithms • Java',
+    logline: 'A modular physics simulation engine engineered completely from scratch in Java with zero third-party physics libraries.',
+    stack: ['Java', 'Physics Engine', 'OOP', 'Algorithms'],
+    build: [
+      'Engineered a complete 2D/3D physics simulation engine from first principles in pure Java — implementing numerical integration (Euler & Verlet), particle dynamics, and rigid-body mechanics without external dependencies.',
+      'Designed custom collision detection algorithms, bounding volume hierarchies, and impulse-based contact resolution solvers to achieve stable real-time physical interactions.',
+    ],
+    features: [
+      'From-scratch numerical integration (Euler & Verlet)',
+      'Impulse-based collision detection and resolution',
+      'Rigid-body mechanics and particle dynamics',
+      'Zero external physics libraries (pure Java)',
+    ],
+    metrics: [
+      { value: 'Pure Java', label: 'built from first principles' },
+      { value: '0', label: 'external physics dependencies' },
+      { value: 'Real-Time', label: 'collision & impulse solver' },
+      { value: 'OOP', label: 'modular architecture' },
+    ],
+    github: 'https://github.com/adiaditi-priya17/physics-engine',
     palette: { from: '#022013', via: '#059669', to: '#020d08', accent: '#34d399' },
     motif: 'shield',
   },
@@ -156,6 +185,8 @@ export const projects: Project[] = [
       { value: 'Vanilla', label: 'no frameworks' },
       { value: '100%', label: 'hand-coded CSS' },
     ],
+    github: 'https://github.com/adiaditi-priya17/Netflix-Clone',
+    live: 'https://netflixclonelearning.vercel.app',
     palette: { from: '#20081a', via: '#86198f', to: '#0d030b', accent: '#f43f5e' },
     motif: 'tenants',
   },
@@ -181,6 +212,8 @@ export const projects: Project[] = [
       { value: 'Accessible', label: 'structured UX' },
       { value: 'Vanilla JS', label: 'no framework' },
     ],
+    github: 'https://github.com/adiaditi-priya17/portfolio.git',
+    live: 'https://aditipriya-portfolio.vercel.app',
     palette: { from: '#1a1003', via: '#d97706', to: '#0a0601', accent: '#fbbf24' },
     motif: 'flow',
   },
@@ -199,32 +232,39 @@ export const achievements: Achievement[] = [
   {
     id: 'head-design',
     title: 'Head of Design & Decoration',
-    org: 'Technika \'24–\'25, BIT Mesra',
-    detail: 'Led the Design & Decoration team for Technika \'24–\'25, contributing to visual planning, creative execution, event decor, and overall presentation while coordinating with the organizing committee.',
+    org: 'Technika \'24–\'25, BIT Mesra Off Campus, Patna',
+    detail: 'Led the Design & Decoration team for Technika \'24–\'25, contributing to visual planning, creative execution, event decor, and overall presentation while coordinating with the organizing committee to maintain a cohesive experience.',
     laurel: 'Leadership',
+    link: 'https://drive.google.com/file/d/1EPLxBjhoWfttVWqRCOND3KJjfOgdcT2L/view?usp=sharing',
   },
   {
     id: 'pre-rd-camp',
     title: 'Pre-RD Camp Participant',
-    org: 'NSS — State Level',
-    detail: 'Participated in the State Level Pre-Republic Day Parade Selection Camp 2024 organized by the Regional Directorate of NSS, Patna — demonstrating discipline and active participation.',
+    org: 'Regional Directorate of NSS, Patna',
+    detail: 'Participated in the State Level Pre-Republic Day Parade Selection Camp 2024 organized by the Regional Directorate of NSS, Patna in collaboration with MMHAPU, demonstrating active participation, discipline, and leadership.',
     laurel: 'State Level',
-  },
-  {
-    id: 'hydronet-engine',
-    title: 'Physics Engine from Scratch',
-    org: 'HydroNet — Personal Project',
-    detail: 'Built a full hydrodynamics simulation engine from first principles in Java with no external physics libraries, scripted and analysed in Python.',
-    laurel: 'Open Source',
+    link: 'https://drive.google.com/file/d/12BsqpPA9yHTbgstnGW_gu8xUX6SIwMn6/view?usp=sharing',
   },
 ];
 
 export type Certification = { issuer: string; name: string; link: string };
 
 export const certifications: Certification[] = [
-  { issuer: 'Digital Marketing', name: 'Digital Marketing Intern Certificate', link: 'https://www.linkedin.com/in/aditi-priya-9a6a382b4/' },
-  { issuer: 'NSS', name: 'Pre-RD Camp Certificate 2024', link: 'https://www.linkedin.com/in/aditi-priya-9a6a382b4/' },
-  { issuer: 'BIT Mesra', name: 'Head of Design & Decoration — Technika \'24–\'25', link: 'https://www.linkedin.com/in/aditi-priya-9a6a382b4/' },
+  {
+    issuer: 'Dixit Global Tech',
+    name: 'Digital Marketing Intern Certificate',
+    link: 'https://drive.google.com/file/d/14FKxrzupHDsRl2wGCNNQyOQe2cMh3FoO/view?usp=sharing',
+  },
+  {
+    issuer: 'BIT Mesra Off Campus, Patna',
+    name: 'Head of Design & Decoration — Technika \'24–\'25 Certificate',
+    link: 'https://drive.google.com/file/d/1EPLxBjhoWfttVWqRCOND3KJjfOgdcT2L/view?usp=sharing',
+  },
+  {
+    issuer: 'Regional Directorate of NSS, Patna',
+    name: 'State Level Pre-Republic Day Parade Selection Camp 2024 Certificate',
+    link: 'https://drive.google.com/file/d/12BsqpPA9yHTbgstnGW_gu8xUX6SIwMn6/view?usp=sharing',
+  },
 ];
 
 export type Skill = { name: string; mono: string; note?: string };
@@ -234,10 +274,11 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'languages',
     title: 'Languages',
-    subtitle: 'Java & JavaScript at the core',
+    subtitle: 'Java, Python & JavaScript',
     skills: [
       { name: 'Java', mono: 'Jv', note: 'Primary' },
-      { name: 'JavaScript', mono: 'Js', note: 'Primary' },
+      { name: 'Python', mono: 'Py', note: 'Modeling' },
+      { name: 'JavaScript', mono: 'Js', note: 'Full-Stack' },
     ],
   },
   {
@@ -287,8 +328,9 @@ export const skillCategories: SkillCategory[] = [
     title: 'Physics & Simulation',
     subtitle: 'Computational engines',
     skills: [
-      { name: 'Physics Engine', mono: 'Ph', note: 'HydroNet' },
-      { name: 'Python', mono: 'Py' },
+      { name: 'Physics Engine', mono: 'Ph', note: 'Pure Java' },
+      { name: 'HydroNet', mono: 'Hy', note: 'Python' },
+      { name: 'NumPy', mono: 'Np', note: 'Analysis' },
     ],
   },
   {
@@ -331,7 +373,7 @@ export const skillCategories: SkillCategory[] = [
  * where the skill appears in the projects, certifications or achievements on the resume.
  */
 export const skillEvidence: Record<string, string[]> = {
-  Java: ['HydroNet Physics Engine', 'SAFER-AI backend'],
+  Java: ['Physics Engine from Scratch', 'SAFER-AI backend', 'OOPs & Algorithms'],
   JavaScript: ['SAFER-AI frontend', 'Netflix Clone', 'Portfolio Website'],
   'React.js': ['SAFER-AI frontend'],
   'Next.js': ['Full-stack web development'],
@@ -346,18 +388,20 @@ export const skillEvidence: Record<string, string[]> = {
   'JWT Auth': ['SAFER-AI user authentication'],
   'Gemini API': ['SAFER-AI AI risk analysis'],
   'Solana Devnet': ['SAFER-AI blockchain layer'],
-  'Physics Engine': ['HydroNet — built from scratch'],
-  Python: ['HydroNet scripting & analysis'],
+  'Physics Engine': ['Physics Engine from Scratch in Java (Euler/Verlet integration)'],
+  HydroNet: ['HydroNet in Python (Hydrological network modeling)'],
+  Python: ['HydroNet Computational Network Simulation & Analysis'],
+  NumPy: ['HydroNet numerical pipelines & simulation arrays'],
   'Git / GitHub': ['All projects'],
   Vite: ['Portfolio Website'],
   DSA: ['CS Fundamentals'],
   DBMS: ['CS Fundamentals'],
-  OOPs: ['Java — HydroNet'],
+  OOPs: ['Physics Engine in Java'],
   OS: ['CS Fundamentals'],
   CNS: ['CS Fundamentals'],
   Blockchain: ['SAFER-AI — Solana Devnet'],
   'Full-Stack Dev': ['SAFER-AI', 'Netflix Clone', 'Portfolio Website'],
-  'Physics Simulation': ['HydroNet Physics Engine'],
+  'Physics Simulation': ['Physics Engine in Java', 'HydroNet in Python'],
 };
 
 export type Episode = {
@@ -436,7 +480,7 @@ export const seasons: Season[] = [
     number: 3,
     title: 'Building Real Products',
     period: '2024 – 2025',
-    synopsis: 'From a Netflix clone and portfolio site to AI-powered payments and a custom physics engine.',
+    synopsis: 'Five Originals — from frontend streaming clones and AI payments to a Python modeling system and a pure Java physics engine.',
     episodes: [
       {
         code: 'S03 E01',
@@ -456,9 +500,17 @@ export const seasons: Season[] = [
       },
       {
         code: 'S03 E03',
-        title: 'The Physics Engineer',
-        description: 'HydroNet — a hydrodynamics physics engine built from scratch in Java with no external libraries, scripted and analysed in Python.',
-        tags: ['Java', 'Python', 'Physics Engine'],
+        title: 'The Python Modeler',
+        description: 'HydroNet — a computational hydrology network modeling and fluid simulation system developed in Python with automated data pipelines.',
+        tags: ['Python', 'Simulation', 'NumPy'],
+        runtime: '2025',
+        palette: ocean,
+      },
+      {
+        code: 'S03 E04',
+        title: 'The Engine Architect',
+        description: 'Physics Engine — engineered entirely from scratch in pure Java with custom numerical integration, particle systems, and rigid-body collision solvers.',
+        tags: ['Java', 'Physics Engine', 'OOP'],
         runtime: '2025',
         palette: jade,
       },
@@ -468,7 +520,7 @@ export const seasons: Season[] = [
     number: 4,
     title: 'The Work Arc',
     period: '2025 – 2026',
-    synopsis: 'First professional experience as a Digital Marketing Intern at Dixit Global Tech Pvt. Ltd.',
+    synopsis: 'Professional industry experience as a Digital Marketing Intern at Dixit Global Tech Pvt. Ltd.',
     episodes: [
       {
         code: 'S04 E01',
@@ -484,7 +536,7 @@ export const seasons: Season[] = [
     number: 5,
     title: "What's Next",
     period: 'Now streaming',
-    synopsis: 'Exploring blockchain, full-stack architecture, and physics-based simulation at scale.',
+    synopsis: 'Exploring blockchain, full-stack architecture, and computational simulation at scale.',
     episodes: [
       {
         code: 'S05 E01',
@@ -503,14 +555,14 @@ export type TopPick = { label: string; title: string; detail: string; palette: P
 export const topPicks: TopPick[] = [
   { label: 'Primary languages', title: 'Java & JavaScript', detail: 'Core stack across all projects', palette: amber },
   { label: 'AI Original', title: 'SAFER-AI', detail: 'Cross-border payments • Gemini API • Solana', palette: ocean },
-  { label: 'Physics feat.', title: 'HydroNet', detail: 'Physics engine from scratch — Java + Python', palette: jade },
-  { label: 'Blockchain layer', title: 'Solana Devnet', detail: 'Blockchain simulation in SAFER-AI', palette: violet },
+  { label: 'Python Modeling', title: 'HydroNet', detail: 'Computational simulation & analysis in Python', palette: ocean },
+  { label: 'Pure Java Engine', title: 'Physics Engine', detail: 'Built from scratch in Java — zero external libs', palette: jade },
   { label: 'Academic score', title: 'CGPA 8.95', detail: 'BIT Mesra — B.Tech CSE', palette: crimson },
   { label: 'Leadership role', title: 'Head of Design', detail: 'Technika \'24–\'25 — BIT Mesra', palette: amber },
   { label: 'State achievement', title: 'Pre-RD Camp', detail: 'NSS — State Level 2024', palette: ocean },
   { label: 'Frontend original', title: 'Netflix Clone', detail: 'Responsive HTML/CSS/JS', palette: crimson },
   { label: 'Work experience', title: 'Digital Marketing', detail: 'Dixit Global Tech — 7 months', palette: jade },
-  { label: 'Next frontier', title: 'Physics Simulation', detail: 'with Blockchain & Full-Stack Dev', palette: violet },
+  { label: 'Next frontier', title: 'Simulation & Web3', detail: 'with Blockchain & Full-Stack Dev', palette: violet },
 ];
 
 /** Slides for the "▶ Play Intro" cinematic sequence. */
@@ -525,9 +577,9 @@ export const introSlides: IntroSlide[] = [
   },
   {
     kicker: 'Skills',
-    title: 'Java & JavaScript.',
+    title: 'Java, Python & JavaScript.',
     lines: ['React.js, Next.js, HTML, CSS, Tailwind · Node.js, Express.js, MongoDB', 'Gemini API, JWT, REST API · Solana Devnet · Git'],
-    chips: ['Java', 'JavaScript', 'React.js', 'Node.js', 'Solana', 'MongoDB'],
+    chips: ['Java', 'Python', 'JavaScript', 'React.js', 'Node.js', 'Solana'],
   },
   {
     kicker: 'Experience',
@@ -536,19 +588,30 @@ export const introSlides: IntroSlide[] = [
   },
   {
     kicker: 'Projects',
-    title: 'Four Originals',
-    lines: ['SAFER-AI — AI × Blockchain cross-border payments', 'HydroNet — physics engine from scratch (Java + Python)', 'Netflix Clone · Personal Portfolio — responsive frontend'],
+    title: 'Five Originals',
+    lines: [
+      'SAFER-AI — AI × Blockchain cross-border payments',
+      'HydroNet — Computational network simulation in Python',
+      'Physics Engine — Built from scratch in pure Java',
+      'Netflix Clone · Personal Portfolio Website',
+    ],
   },
   {
     kicker: 'Achievements',
     title: 'Top Moments',
-    lines: ['Head of Design & Decoration — Technika \'24–\'25, BIT Mesra', 'State Level Pre-RD Camp 2024 — NSS, Patna', 'HydroNet — custom physics engine from scratch'],
+    lines: [
+      'Head of Design & Decoration — Technika \'24–\'25, BIT Mesra',
+      'State Level Pre-RD Camp 2024 — NSS, Patna',
+    ],
   },
   {
-    kicker: 'Physics Engine',
-    title: 'HydroNet',
-    lines: ['Built entirely from scratch in Java — no external physics libraries', 'Scripted & analysed in Python'],
-    chips: ['Java', 'Python', 'Physics Engine'],
+    kicker: 'Engineering Feat',
+    title: 'Java Physics Engine',
+    lines: [
+      'Engineered completely from scratch in Java — zero external physics libraries',
+      'Custom numerical integration, rigid-body mechanics & impulse solver',
+    ],
+    chips: ['Java', 'Physics Engine', 'OOP'],
   },
   {
     kicker: 'Current mission',

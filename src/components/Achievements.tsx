@@ -23,7 +23,7 @@ export default function Achievements() {
     <>
       <SectionHeading kicker="Awards season" title="Top Moments" />
 
-      <div className="gutter grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 [perspective:1400px]">
+      <div className="gutter grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto [perspective:1400px]">
         {achievements.map((a, i) => (
           <motion.div
             key={a.id}
@@ -33,7 +33,7 @@ export default function Achievements() {
             transition={{ duration: 0.9, delay: i * 0.08, ease: EASE }}
           >
             <Tilt max={8} className="group h-full rounded-2xl">
-              <article className="relative flex h-full min-h-[340px] flex-col items-center overflow-hidden rounded-2xl bg-[radial-gradient(120%_80%_at_50%_0%,#2a1f10,#0d0b08_60%,#07070a)] px-5 pb-6 pt-8 text-center ring-1 ring-[#d9b46a]/20 transition duration-500 group-hover:ring-[#d9b46a]/60">
+              <article className="relative flex h-full min-h-[360px] flex-col items-center overflow-hidden rounded-2xl bg-[radial-gradient(120%_80%_at_50%_0%,#2a1f10,#0d0b08_60%,#07070a)] px-6 pb-7 pt-8 text-center ring-1 ring-[#d9b46a]/20 transition duration-500 group-hover:ring-[#d9b46a]/60 group-hover:shadow-[0_20px_60px_rgba(217,180,106,0.15)]">
                 <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d9b46a]/70 to-transparent" />
                 <div aria-hidden className="absolute -top-24 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-[#d9b46a]/10 blur-3xl transition duration-700 group-hover:bg-[#d9b46a]/25" />
                 <div className="relative flex items-center gap-1">
@@ -52,9 +52,9 @@ export default function Achievements() {
                     target="_blank"
                     rel="noreferrer"
                     data-cursor="link"
-                    className="relative mt-auto inline-flex min-h-10 items-center gap-1 pt-5 text-xs font-semibold tracking-wide text-bone underline decoration-[#d9b46a]/60 underline-offset-4 hover:decoration-[#d9b46a]"
+                    className="relative mt-auto inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-[#d9b46a]/40 bg-[#d9b46a]/10 px-5 pt-0 text-xs font-semibold tracking-wide text-[#f5dfa8] transition duration-300 hover:border-[#d9b46a] hover:bg-[#d9b46a]/25 hover:text-white hover:scale-105"
                   >
-                    View certificate ↗
+                    <span>📜</span> View Official Certificate ↗
                   </a>
                 )}
               </article>

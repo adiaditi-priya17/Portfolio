@@ -96,18 +96,27 @@ export function ProjectArt({ project, className = '' }: { project: Project; clas
 /** Fictional studio / personal mark used in the nav and on cards. */
 export function SeriesMark({ className = '' }: { className?: string }) {
   return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      <svg viewBox="0 0 28 32" className="h-[1.25em] w-auto" aria-hidden>
-        <defs>
-          <linearGradient id="ap-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8b5cf6" />
-            <stop offset="100%" stopColor="#06b6d4" />
-          </linearGradient>
-        </defs>
-        {/* Custom modern 'A' monogram */}
-        <path d="M14 4 L5 27 M14 4 L23 27 M8 19 L20 19" fill="none" stroke="url(#ap-grad)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      <span className="font-sans text-[0.68em] font-bold tracking-[0.34em] text-cyan-300">ADITI</span>
+    <span className={`inline-flex items-center gap-2.5 ${className}`}>
+      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#0e142e] ring-1 ring-cyan-400/40 shadow-[0_0_12px_rgba(6,182,212,0.35)]">
+        <svg viewBox="0 0 28 32" className="h-[18px] w-auto" aria-hidden>
+          <defs>
+            <linearGradient id="ap-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#a855f7" />
+              <stop offset="50%" stopColor="#6366f1" />
+              <stop offset="100%" stopColor="#06b6d4" />
+            </linearGradient>
+            <linearGradient id="ap-cross" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#818cf8" />
+              <stop offset="100%" stopColor="#38bdf8" />
+            </linearGradient>
+          </defs>
+          <path d="M14 4 L5 28 M14 4 L23 28" fill="none" stroke="url(#ap-grad)" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 20 L20 20" fill="none" stroke="url(#ap-cross)" strokeWidth="3.2" strokeLinecap="round" />
+        </svg>
+      </span>
+      <span className="font-sans text-[0.72em] font-extrabold tracking-[0.34em] text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-cyan-200 to-cyan-400">
+        ADITI
+      </span>
     </span>
   );
 }

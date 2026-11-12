@@ -18,6 +18,7 @@ import Achievements from './components/Achievements';
 import ResumeSection from './components/ResumeViewer';
 import FinalCTA from './components/FinalCTA';
 import { EASE } from './components/fx';
+import Chatbot from './components/chatbot';
 
 // Overlays are only needed on demand — split them out of the first load.
 const PlayIntro = lazy(() => import('./components/PlayIntro'));
@@ -132,6 +133,7 @@ function Series() {
             ))}
             <FinalCTA onReplay={() => setStage('opening')} />
           </main>
+          <Chatbot />
         </motion.div>
       )}
 
